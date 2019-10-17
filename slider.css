@@ -1,0 +1,105 @@
+  .hamburger {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 30px;
+    display: inline-block;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    z-index: 10000;
+  }
+  .hamburger, .navigation {
+    transition: transform 0.3s 0.1s ease-in-out, visibility 0s 0.4s;
+  }
+  .hamburger--active {
+    transform: translatex(-250px);
+  }
+  .hamburger__box {
+    width: 35px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+  }
+  .hamburger__inner {
+    width: 100%;
+    height: 3px;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color 0.1s 0.2s ease-in-out;
+  }
+  .hamburger__inner::before, .hamburger__inner::after {
+    width: 100%;
+    height: 3px;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    content: '';
+    left: 0;
+    transition: transform 0.2s 0.2s ease-in-out;
+  }
+  .hamburger__inner::before {
+    top: -10px;
+  }
+  .hamburger__inner::after {
+    top: 10px;
+  }
+  .hamburger--active .hamburger__inner {
+    background-color: transparent;
+  }
+  .hamburger--active .hamburger__inner:before {
+    transform: translateY(10px) rotate(45deg);
+  }
+  .hamburger--active .hamburger__inner:after {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+  .navigation-container {
+    top: 0;
+    right: 0;
+    position: fixed;
+    overflow: hidden;
+    width: 250px;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 10000;
+  }
+
+  .navigation-container--active {
+    pointer-events: auto;
+  }
+
+  .navigation {
+    height: 100vh;
+    width: 250px;
+    background-color: #FFFFFF;
+    position: fixed;
+    top: 0;
+    right: 0;
+    visibility: hidden;
+    transform: translateX(250px);
+  }
+  .navigation--active {
+    transform: translateX(0px);
+    transition: transform 0.3s 0.1s ease-in-out, visibility 0s 0s;
+    visibility: visible;
+  }
+  .navigation__list {
+    margin-top: 50px;
+    list-style: none;
+  }
+  .navigation__item {
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+  .navigation__item a {
+    text-decoration: none;
+    color: #171717;
+    margin: 10px;
+  }
+  
+  .heh {
+    height: 100vh;
+  }
